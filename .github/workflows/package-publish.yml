@@ -38,6 +38,6 @@ jobs:
           node-version: 14.x
           registry-url: 'http://legion.sytes.net:4873'
       - name: Publish
-        run: yarn publish
+        run: yarn publish:all
         env:
           NODE_AUTH_TOKEN: ${{ secrets.VERDACCIO_TOKEN }}

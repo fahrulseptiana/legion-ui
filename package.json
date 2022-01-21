@@ -17,7 +17,7 @@
     "build": "lerna run build",
     "start": "lerna run start --parallel",
     "clean": "lerna clean && rimraf packages/*/{dist,build}",
-    "publish": "lerna publish"
+    "publish:all": "lerna publish from-package"
   },
   "devDependencies": {
     "lerna": "^4.0.0",
