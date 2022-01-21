@@ -17,7 +17,7 @@
     "build": "lerna run build",
     "start": "lerna run start --parallel",
     "clean": "lerna clean && rimraf packages/*/{dist,build}",
-    "publish:all": "lerna publish from-package --dist-tag next --pre-dist-tag next --registry http://legion.sytes.net:4873"
+    "publish:all": "lerna publish from-package --dist-tag next --pre-dist-tag next --registry http://legion.sytes.net:4873 --yes"
   },
   "devDependencies": {
     "lerna": "^4.0.0",
