@@ -2,24 +2,47 @@ name: Package Publish
 
 on:
   push:
-    branches: ['master']
-
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 jobs:
   publish:
-    runs-on: ubuntu-18.04
+    name: Publish
+    runs-on: ubuntu-latest
+      publish:
+    name: Publish
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache node_modules
+        id: cache-modules
+        uses: actions/cache@v1
         with:
-          ref: master
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '14.x'
-      - name: Install dependencies
+          path: node_modules
+          key: 12.x-${{ runner.OS }}-build-${{ hashFiles('package.json') }}
+      - name: Git Identity
         run: |
-          yarn install
-      - uses: smartlyio/lerna-publish-action@v2
-        with:
-          bump: major
-          registry: "http://legion.sytes.net:4873"
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY
         env:
-          AUTH_TOKEN_STRING: ${{ format('//legion.sytes.net:4873/:_authToken={0}', secrets.VERDACCIO_TOKEN) }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install
+        if: steps.cache-modules.outputs.cache-hit != 'true'
+        run: yarn install
+      - name: Build
+        run: yarn build
+      - name: Setup Node ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+          registry-url: 'http://legion.sytes.net:4873'
+      - name: Publish
+        run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.VERDACCIO_TOKEN }}

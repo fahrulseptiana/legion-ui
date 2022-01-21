@@ -12,7 +12,8 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "start": "lerna run start --parallel",
-    "clean": "lerna clean && rimraf packages/*/{dist,build}"
+    "clean": "lerna clean && rimraf packages/*/{dist,build}",
+    "publish": "lerna publish"
   },
   "devDependencies": {
     "lerna": "^4.0.0",
