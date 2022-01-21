@@ -1,0 +1,25 @@
+name: Package Publish
+
+on:
+  push:
+    branches: ['master']
+
+jobs:
+  publish:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - name: Install dependencies
+        run: |
+          yarn install
+      - uses: smartlyio/lerna-publish-action@v2
+        with:
+          bump: major
+          registry: "http://legion.sytes.net:4873"
+        env:
+          AUTH_TOKEN_STRING: ${{ format('//legion.sytes.net:4873/:_authToken={0}', secrets.VERDACCIO_TOKEN) }}
