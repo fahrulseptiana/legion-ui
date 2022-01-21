@@ -4,6 +4,11 @@
   "main": "index.js",
   "author": "Telkom Design",
   "license": "MIT",
+  "private": true,
+  "publishConfig":{
+    "access": "restricted",
+    "registry":"http://legion.sytes.net:4873"
+  }, 
   "workspaces": [
     "packages/*"
   ],
