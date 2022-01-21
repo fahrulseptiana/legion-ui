@@ -4,7 +4,6 @@
   "main": "index.js",
   "author": "Telkom Design",
   "license": "MIT",
-  "private": true,
   "workspaces": [
     "packages/*"
   ],
