@@ -1,12 +1,12 @@
 import React from 'react';
-import {ThemeProvider, Button} from 'legion-ui'
-import base from '@legion-ui/theme-base'
+import {ThemeProvider} from 'legion-ui'
+import {theme} from '@legion-ui/theme-base'
 
 export const App = () => {
   return (
     <>
-      <ThemeProvider theme={base}>
-        <Button>Test</Button>
+      <ThemeProvider theme={theme}>
+        {/* Test your component here */}
       </ThemeProvider>
     </>
   );
