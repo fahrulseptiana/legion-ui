@@ -54,6 +54,7 @@
   },
   "dependencies": {
     "@theme-ui/css": "^0.13.1",
-    "@theme-ui/preset-base": "^0.13.1"
+    "@theme-ui/preset-base": "^0.13.1",
+    "deepmerge": "^4.2.2"
   }
 }
