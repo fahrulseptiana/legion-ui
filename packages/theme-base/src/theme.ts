@@ -11,7 +11,7 @@ export const theme = makeTheme({
   buttons: {
     solid: {
       ...button,
-      backgroundColor: 'information70',
+      backgroundColor: 'primary50',
       color: 'grayscale10',
       border: 'none',
       '&:hover': {
