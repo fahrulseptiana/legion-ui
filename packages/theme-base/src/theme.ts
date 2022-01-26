@@ -14,6 +14,7 @@ export const theme = makeTheme({
       backgroundColor: 'primary50',
       color: 'grayscale10',
       border: 'none',
+      fontFamily: 'Nunito',
       '&:hover': {
         backgroundColor: 'primary60',
         boxShadow: 'none !important',
@@ -35,6 +36,7 @@ export const theme = makeTheme({
       backgroundColor: 'primary10',
       color: 'primary50',
       border: 'none',
+      fontFamily: 'Nunito',
       '&:hover': {
         color: `${color.primary60} !important`,
         backgroundColor: `${color.primary20} !important`,
