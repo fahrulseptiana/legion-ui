@@ -7,7 +7,7 @@
   "private": true,
   "publishConfig":{
     "access": "restricted",
-    "registry":"https://4873-fahrulseptiana-sandbox-m2300snxuyp.ws-us29.gitpod.io/"
+    "registry":"https://legion.sytes.net:4873/"
   }, 
   "workspaces": [
     "packages/*"
