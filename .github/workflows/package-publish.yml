@@ -36,7 +36,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
-          registry-url: 'http://legion.sytes.net:4873'
+          registry-url: 'https://4873-fahrulseptiana-sandbox-m2300snxuyp.ws-us29.gitpod.io/'
       - name: Publish
         run: yarn publish:all
         env:
