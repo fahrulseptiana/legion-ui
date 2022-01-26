@@ -30,27 +30,29 @@ export const theme = makeTheme({
         color: `${color.grayscale50} !important`,
       }
     },
-    outline: {
+    soft: {
       ...button,
-      backgroundColor: '#fff',
+      backgroundColor: 'primary10',
       color: 'primary50',
-      borderWidth: '1px',
-      borderStyle: 'solid',
-      borderColor: 'primary50',
+      border: 'none',
       '&:hover': {
-        color: 'primary60',
+        color: `${color.primary60} !important`,
+        backgroundColor: `${color.primary20} !important`,
         boxShadow: 'none !important',
       },
       '&:active': {
         color: `${color.primary70} !important`,
-        backgroundColor: `${color.primary20} !important`
+        backgroundColor: `${color.primary30} !important`,
+        boxShadow: 'none !important',
       },
       '&:focus': {
+        backgroundColor: 'primary10',
+        color: 'primary50',
         boxShadow: `0px 0px 0px 2px ${color.primary40} !important`,
       },
       '&:disabled': {
         cursor: 'unset',
-        borderColor: 'grayscale30',
+        backgroundColor: 'grayscale20',
         color: `${color.grayscale50} !important`,
       }
     }
