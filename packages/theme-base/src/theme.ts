@@ -1,10 +1,10 @@
-import base from '@theme-ui/preset-base'
+//import base from '@theme-ui/preset-base'
 import {makeTheme} from '@theme-ui/css/utils'
 
 import { button, color } from '.'
 
 export const theme = makeTheme({
-  ...base,
+  //...base,
   colors: {
     ...color
   },
