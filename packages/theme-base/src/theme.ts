@@ -19,11 +19,12 @@ export const theme = makeTheme({
         backgroundColor: 'primary60',
         boxShadow: 'none !important',
       },
-      '&:active': {
-        backgroundColor: `${color.primary70} !important`
-      },
       '&:focus': {
         boxShadow: `0px 0px 0px 2px ${color.primary40} !important`,
+      },
+      '&:active': {
+        backgroundColor: `${color.primary70} !important`,
+        boxShadow: 'none !important',
       },
       '&:disabled': {
         cursor: 'unset',
