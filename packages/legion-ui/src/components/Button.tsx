@@ -24,6 +24,7 @@ export const Button: React.FC<ButtonProps> = ({
         ...sizes
       }}
       {...rest}
+      disabled={disabled}
     >
       {
         iconLeft && size === 'lg' && <span className='wrapper-icon-left-large'>{iconLeft}</span> ||

@@ -688,7 +688,7 @@ export const theme = makeTheme({
         boxShadow: 'none !important',
       },
       '&:disabled': {
-        cursor: 'unset',
+        cursor: 'unset !important',
         backgroundColor: `${color.grayscale30} !important`,
         color: `${color.grayscale50} !important`,
       }
