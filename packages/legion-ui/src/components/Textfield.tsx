@@ -20,68 +20,35 @@ export const Textfield: React.FC<InputProps> = ({
 }: InputProps) => {
   const context = useThemeUI();
   const variants = get(context.theme, `forms.input.${variant}`);
+  const container = get(context.theme, `forms.input.container`);
+  const containPrefLeft = get(context.theme, `forms.input.containPrefLeft`);
+  const wrapperPrefLeft = get(context.theme, `forms.input.wrapperPrefLeft`);
+  const limitPrefLeft = get(context.theme, `forms.input.limitPrefLeft`);
+  const wrappPrefLeftIconLeft = get(context.theme, `forms.input.wrappPrefLeftIconLeft`);
+  const wrappIconLeft = get(context.theme, `forms.input.wrappIconLeft`);
+  const wrappField = get(context.theme, `forms.input.wrappField`);
+  const wrappNormal = get(context.theme, `forms.input.wrappNormal`);
+  const wrappSuccess = get(context.theme, `forms.input.wrappSuccess`);
+  const wrappError = get(context.theme, `forms.input.wrappError`);
+  const wrappPrefRightIconRight = get(context.theme, `forms.input.wrappPrefRightIconRight`);
+  const wrappIconRight = get(context.theme, `forms.input.wrappIconRight`);
+  const containPrefRight = get(context.theme, `forms.input.containPrefRight`);
+  const limitPrefRight = get(context.theme, `forms.input.limitPrefRight`);
+  const wrapperPrefRight = get(context.theme, `forms.input.wrapperPrefRight`);
   return (
-    <div
-      sx={{
-        position: 'relative',
-        display: 'flex !important',
-        flexDirection: 'row',
-        alignItems: 'center !important',
-        height: '44px !important',
-        backgroundColor: '#FFFFFF',
-      }}
-    >
+    <div sx={{ ...container }}>
       {prefixLeft &&
-        <div
-          sx={{
-            display: 'flex',
-            height: '44px',
-            alignItems: 'center',
-            justifyContent: 'center',
-            paddingLeft: '12px',
-            pointerEvents: 'none',
-            zIndex: 3,
-          }}
-        >
-          <span
-            sx={{
-              color: '#2E3032',
-              fontWeight: '600',
-              fontSize: '16px',
-              lineHeight: '24px',
-            }}
-          >{prefixLeft}</span>
-          <span
-            sx={{
-              height: '24px',
-              borderRight: '1px solid #D9DDE3',
-              marginLeft: '12px',
-            }}
-          />
+        <div sx={{ ...containPrefLeft }}>
+          <span sx={{ ...wrapperPrefLeft }}>
+            {prefixLeft}
+          </span>
+          <span sx={{ ...limitPrefLeft }} />
         </div>
       }
       {prefixLeft && iconLeft &&
-        <span
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            width: '16px',
-            height: '16px',
-            marginLeft: '12px',
-            zIndex: 2,
-          }}
-        >{iconLeft}</span> || iconLeft &&
-        <span
-          sx={{
-            position: 'relative',
-            marginLeft: '15px',
-            zIndex: 2,
-            display: 'flex',
-            alignItems: 'center',
-            width: '16px',
-            height: '16px',
-          }}
-        >{iconLeft}</span>
+        <span sx={{ ...wrappPrefLeftIconLeft }}>{iconLeft}</span> ||
+        iconLeft &&
+        <span sx={{ ...wrappIconLeft }}>{iconLeft}</span>
       }
       <Component
         {...rest}
@@ -89,108 +56,20 @@ export const Textfield: React.FC<InputProps> = ({
         sx={{ ...variants }}
         disabled={disabled}
       />
-      {
-        variant && disabled && <div
-          sx={{
-            position: 'absolute',
-            zIndex: 1,
-            top: '0px',
-            left: '0px',
-            width: '100%',
-            height: '44px',
-            borderRadius: '4px',
-            border: '1px solid #8F95B2 !important',
-            backgroundColor: '#EDEFF5 !important',
-            transition: 'all 0.15s ease-in-out 0s',
-          }}
-        /> ||
-        variant === 'normal' && <div
-          sx={{
-            position: 'absolute',
-            zIndex: 1,
-            top: '0px',
-            left: '0px',
-            width: '100%',
-            height: '44px',
-            borderRadius: '4px',
-            border: '1px solid #8F95B2',
-            transition: 'all 0.15s ease-in-out 0s',
-          }}
-        /> ||
-        variant === 'success' && <div
-          sx={{
-            zIndex: 1,
-            top: '0px',
-            left: '0px',
-            width: '100%',
-            height: '44px',
-            borderRadius: '4px',
-            border: '1px solid #52BD94',
-            transition: 'all 0.15s ease-in-out 0s',
-            position: 'absolute',
-          }}
-        /> ||
-        variant === 'error' && <div
-          sx={{
-            zIndex: 1,
-            top: '0px',
-            left: '0px',
-            width: '100%',
-            height: '44px',
-            borderRadius: '4px',
-            border: '1px solid #FF5630',
-            transition: 'all 0.15s ease-in-out 0s',
-            position: 'absolute',
-          }}
-        />
+      {variant && disabled &&
+        <div sx={{ ...wrappField }} /> ||
+        variant === 'normal' && <div sx={{ ...wrappNormal }} /> ||
+        variant === 'success' && <div sx={{ ...wrappSuccess }} /> ||
+        variant === 'error' && <div sx={{ ...wrappError }} />
       }
       {prefixRight && iconRight &&
-        <span
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            width: '16px',
-            height: '16px',
-            zIndex: 2,
-            marginRight: '12px',
-          }}
-        >{iconRight}</span> || iconRight &&
-        <span
-          sx={{
-            position: 'relative',
-            zIndex: 2,
-            display: 'flex',
-            alignItems: 'center',
-            width: '16px',
-            height: '16px',
-            marginRight: '15px',
-          }}
-        >{iconRight}</span>
+        <span sx={{ ...wrappPrefRightIconRight }}>{iconRight}</span> ||
+        iconRight && <span sx={{ ...wrappIconRight }}>{iconRight}</span>
       }
       {prefixRight &&
-        <div
-          sx={{
-            textAlign: 'center',
-            paddingRight: '12px',
-            display: 'flex',
-            zIndex: 3,
-          }}
-        >
-          <span
-            sx={{
-              height: '24px',
-              borderRight: '1px solid #D9DDE3',
-              marginRight: '12px',
-            }}
-          />
-          <span
-            sx={{
-              color: '#2E3032',
-              fontWeight: '600',
-              fontSize: '16px',
-              lineHeight: '24px',
-            }}
-          >{prefixRight}</span>
+        <div sx={{ ...containPrefRight }}>
+          <span sx={{ ...limitPrefRight }} />
+          <span sx={{ ...wrapperPrefRight }}>{prefixRight}</span>
         </div>
       }
     </div>

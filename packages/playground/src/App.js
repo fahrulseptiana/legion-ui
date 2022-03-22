@@ -1,31 +1,47 @@
 import React, { Component } from 'react';
-import { ThemeProvider, LoginPage, Button } from 'legion-ui'
+import { ThemeProvider, LoginPage } from 'legion-ui'
 import { theme } from '@legion-ui/theme-base'
 import './index.css'
-import { Eye } from 'react-feather'
+// import { Eye } from 'react-feather'
 
 class App extends Component {
 
-  handleSubmit = (val) => {
-    console.log(val);
-  }
+  // handleSubmit = (val) => {
+  //   console.log(val);
+  // }
 
-  handleChange = (val) => {
-    console.log(val);
-  }
+  // handleChange = (val) => {
+  //   console.log(val);
+  // }
 
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <div style={{ display: 'flex' }}>
-          <div>
+        <div style={{
+          width: '400px',
+          display: 'block',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginTop: '20px'
+        }}>
+          {/* <Checkbox
+            label="Setuju?"
+            sizeBox="sm"
+            variant="indeterminate"
+          />
+          <Checkbox
+            label="Setuju?"
+            sizeBox="lg"
+            variant="indeterminate"
+          /> */}
+          {/* <div>
             <Button disabled iconLeft={<Eye />}>Solid</Button>
             <Button disabled iconLeft={<Eye />} variant='outline'>Outline</Button>
             <Button disabled iconLeft={<Eye />} variant='soft'>Soft</Button>
             <Button disabled iconLeft={<Eye />} variant='transparent'>Transparent</Button>
             <Button disabled iconLeft={<Eye />} variant='outlineSecondary'>Outline Secondary</Button>
             <Button disabled iconLeft={<Eye />} variant='softSecondary'>Soft Secondary</Button>
-          </div>
+          </div> */}
           {/* <div>
             <Button iconLeft={<Eye />} size="lg">Mata</Button>
             <Button iconLeft={<Eye />} size="md" variant='outline'>Mata</Button>
@@ -75,14 +91,14 @@ class App extends Component {
             <Button iconRight={<Eye />} size="sm" variant='transparent'></Button>
           </div> */}
         </div>
-        {/* <LoginPage
+        <LoginPage
           disabledForm={false}
           formPosition='right'
           logo='http://1.bp.blogspot.com/-r64JHENvch4/WLntZRoYV3I/AAAAAAAACSc/dEL-CKy5fPcljoEvX3fHBGKbjvoyKW98QCK4B/s246/Logo%2BTambora%2B2.png'
           background='https://images.unsplash.com/photo-1564325724739-bae0bd08762c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
           onSubmitLogin={(val) => this.handleSubmit(val)}
           onChangeLogin={(val) => this.handleChange(val)}
-        /> */}
+        />
       </ThemeProvider>
     );
   }

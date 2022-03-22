@@ -13,6 +13,7 @@ export const theme = makeTheme({
   },
   layout: {
     container: {
+      fontFamily: 'Nunito Sans, sans-serif',
       '.container-login-center': {
         ['@media (max-width:480px)']: {
           '.container-side-right': {
@@ -429,6 +430,25 @@ export const theme = makeTheme({
   },
   forms: {
     checkbox: {
+      sizeBoxLarge: {
+        fontSize: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        cursor: 'pointer',
+        width: 'fit-content',
+        fontFamily: 'Nunito Sans, sans-serif'
+      },
+      sizeBoxSmall: {
+        fontSize: '14px',
+        display: 'flex',
+        alignItems: 'center',
+        cursor: 'pointer',
+        width: 'fit-content',
+        fontFamily: 'Nunito Sans, sans-serif'
+      },
+      wrappLabel: {
+        marginLeft: '10px'
+      },
       '& .container-checkbox': {
         display: 'flex',
         alignItems: 'center',
@@ -535,6 +555,130 @@ export const theme = makeTheme({
       }
     },
     input: {
+      container: {
+        position: 'relative',
+        display: 'flex !important',
+        flexDirection: 'row',
+        alignItems: 'center !important',
+        height: '44px !important',
+        backgroundColor: '#FFFFFF',
+      },
+      containPrefLeft: {
+        display: 'flex',
+        height: '44px',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingLeft: '12px',
+        pointerEvents: 'none',
+        zIndex: 3,
+      },
+      wrapperPrefLeft: {
+        color: '#2E3032',
+        fontWeight: '600',
+        fontSize: '16px',
+        lineHeight: '24px',
+      },
+      limitPrefLeft: {
+        height: '24px',
+        borderRight: '1px solid #D9DDE3',
+        marginLeft: '12px',
+      },
+      wrappPrefLeftIconLeft: {
+        display: 'flex',
+        alignItems: 'center',
+        width: '16px',
+        height: '16px',
+        marginLeft: '12px',
+        zIndex: 2,
+      },
+      wrappIconLeft: {
+        position: 'relative',
+        marginLeft: '15px',
+        zIndex: 2,
+        display: 'flex',
+        alignItems: 'center',
+        width: '16px',
+        height: '16px',
+      },
+      wrappField: {
+        position: 'absolute',
+        zIndex: 1,
+        top: '0px',
+        left: '0px',
+        width: '100%',
+        height: '44px',
+        borderRadius: '4px',
+        border: '1px solid #8F95B2 !important',
+        backgroundColor: '#EDEFF5 !important',
+        transition: 'all 0.15s ease-in-out 0s',
+      },
+      wrappNormal: {
+        position: 'absolute',
+        zIndex: 1,
+        top: '0px',
+        left: '0px',
+        width: '100%',
+        height: '44px',
+        borderRadius: '4px',
+        border: '1px solid #8F95B2',
+        transition: 'all 0.15s ease-in-out 0s',
+      },
+      wrappSuccess: {
+        zIndex: 1,
+        top: '0px',
+        left: '0px',
+        width: '100%',
+        height: '44px',
+        borderRadius: '4px',
+        border: '1px solid #52BD94',
+        transition: 'all 0.15s ease-in-out 0s',
+        position: 'absolute',
+      },
+      wrappError: {
+        zIndex: 1,
+        top: '0px',
+        left: '0px',
+        width: '100%',
+        height: '44px',
+        borderRadius: '4px',
+        border: '1px solid #FF5630',
+        transition: 'all 0.15s ease-in-out 0s',
+        position: 'absolute',
+      },
+      wrappPrefRightIconRight: {
+        display: 'flex',
+        alignItems: 'center',
+        width: '16px',
+        height: '16px',
+        zIndex: 2,
+        marginRight: '12px',
+      },
+      wrappIconRight: {
+        position: 'relative',
+        zIndex: 2,
+        display: 'flex',
+        alignItems: 'center',
+        width: '16px',
+        height: '16px',
+        marginRight: '15px',
+      },
+      containPrefRight: {
+        textAlign: 'center',
+        paddingRight: '12px',
+        display: 'flex',
+        zIndex: 3,
+      },
+      limitPrefRight: {
+        height: '24px',
+        borderRight: '1px solid #D9DDE3',
+        marginRight: '12px',
+      },
+      wrapperPrefRight: {
+        color: '#2E3032',
+        fontWeight: '600',
+        fontSize: '16px',
+        lineHeight: '24px',
+      },
       '&:disabled': {
         zIndex: 2,
         border: 0,
@@ -620,7 +764,7 @@ export const theme = makeTheme({
       backgroundColor: 'primary50',
       color: 'grayscale10',
       border: 'none',
-      fontFamily: 'Nunito',
+      fontFamily: 'Nunito Sans, sans-serif',
       '& .wrapper-icon-left-large': {
         display: 'flex',
         width: '20px',
@@ -698,7 +842,7 @@ export const theme = makeTheme({
       backgroundColor: 'grayscale10',
       border: `1px solid ${color.primary50}`,
       color: 'primary50',
-      fontFamily: 'Nunito',
+      fontFamily: 'Nunito Sans, sans-serif',
       '& .wrapper-icon-left-large': {
         display: 'flex',
         width: '20px',
@@ -782,7 +926,7 @@ export const theme = makeTheme({
       backgroundColor: 'primary10',
       color: 'primary50',
       border: 'none',
-      fontFamily: 'Nunito',
+      fontFamily: 'Nunito Sans, sans-serif',
       '& .wrapper-icon-left-large': {
         display: 'flex',
         width: '20px',
@@ -866,7 +1010,7 @@ export const theme = makeTheme({
       backgroundColor: 'transparent',
       border: 'none',
       color: 'primary50',
-      fontFamily: 'Nunito',
+      fontFamily: 'Nunito Sans, sans-serif',
       '& .wrapper-icon-left-large': {
         display: 'flex',
         width: '20px',
@@ -950,7 +1094,7 @@ export const theme = makeTheme({
       backgroundColor: 'grayscale10',
       border: `1px solid ${color.grayscale50}`,
       color: 'grayscale80',
-      fontFamily: 'Nunito',
+      fontFamily: 'Nunito Sans, sans-serif',
       '& .wrapper-icon-left-large': {
         display: 'flex',
         width: '20px',
@@ -1036,7 +1180,7 @@ export const theme = makeTheme({
       backgroundColor: '#F6F7FC',
       color: 'grayscale80',
       border: 'none',
-      fontFamily: 'Nunito',
+      fontFamily: 'Nunito Sans, sans-serif',
       '& .wrapper-icon-left-large': {
         display: 'flex',
         width: '20px',

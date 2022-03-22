@@ -2,13 +2,12 @@
 
 import React from 'react'
 import { jsx } from '@theme-ui/core'
-// import { get } from '@theme-ui/css'
 import { Container as Component, ContainerProps as Props } from '@theme-ui/components'
 import { Button } from './Button';
 import { Anchor } from './Anchor';
 import { Checkbox } from './Checkbox';
 import { Textfield } from './Textfield';
-import { LogIn } from 'react-feather';
+import { LogIn, EyeOff, Mail, Lock } from 'react-feather';
 
 export interface ContainerProps extends Props {
   background?: string;
@@ -27,6 +26,7 @@ export const LoginPage: React.FC<ContainerProps> = ({
   const [email, setEmail] = React.useState<string | boolean>("");
   const [password, setPassword] = React.useState<string | boolean>("");
   const [remember, setRemember] = React.useState<string | boolean>(false);
+  // const [showPass, setshowPass] = React.useState<string | boolean>(false);
 
   const onChangeFields = (name: String, value: string | boolean) => {
     if (name === 'email') {
@@ -73,6 +73,11 @@ export const LoginPage: React.FC<ContainerProps> = ({
     return data
   }
 
+  const onClickShowPass = () => {
+    console.log('ada');
+
+  }
+
   let position;
   if (formPosition === 'left') {
     position = 'form-side-left';
@@ -95,6 +100,8 @@ export const LoginPage: React.FC<ContainerProps> = ({
               <Textfield
                 disabled={disabledForm}
                 name='email'
+                placeholder='Insert Email'
+                iconLeft={<Mail />}
                 onChange={(e) => onChangeEmail(e.target.name, e.target.value)}
               />
               <div className='wrapper-title-pass'>Password</div>
@@ -102,7 +109,10 @@ export const LoginPage: React.FC<ContainerProps> = ({
                 disabled={disabledForm}
                 name='password'
                 type='password'
+                iconLeft={<Lock />}
+                iconRight={<EyeOff onClick={() => onClickShowPass()} />}
                 onChange={(e) => onChangePassword(e.target.name, e.target.value)}
+                placeholder='Insert Password'
               />
 
               <div className='wrapper-remember'>
@@ -121,7 +131,8 @@ export const LoginPage: React.FC<ContainerProps> = ({
                 onClick={() => onSubmit()}
                 type='submit'
                 size='lg'
-                variant='solid'              >
+                variant='solid'
+              >
                 Sign in
               </Button>
             </form>

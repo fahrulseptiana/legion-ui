@@ -19,40 +19,20 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   const labels = get(context.theme, `forms.checkbox.${label}`);
   const variants = get(context.theme, `forms.checkbox.${variant}`);
   const sizes = get(context.theme, `forms.checkbox.${variant}.${sizeBox}`);
+  const sizeBoxLarge = get(context.theme, `forms.checkbox.sizeBoxLarge`);
+  const sizeBoxSmall = get(context.theme, `forms.checkbox.sizeBoxSmall`);
+  const wrappLabel = get(context.theme, `forms.checkbox.wrappLabel`);
   return (
     <React.Fragment>
       {label ?
-        <label
-          sx={sizeBox === 'lg' ?
-            {
-              fontSize: '16px',
-              display: 'flex',
-              alignItems: 'center',
-              cursor: 'pointer',
-              width: 'fit-content',
-              fontFamily: 'Nunito Sans, sans-serif'
-            } :
-            {
-              fontSize: '14px',
-              display: 'flex',
-              alignItems: 'center',
-              cursor: 'pointer',
-              width: 'fit-content',
-              fontFamily: 'Nunito Sans, sans-serif'
-            }
-          }
-        >
+        <label sx={sizeBox === 'lg' ? { ...sizeBoxLarge } : { ...sizeBoxSmall }}>
           <Component
             {...rest}
             type="checkbox"
             sx={{ ...labels, ...variants, ...sizes }}
             disabled={disabled}
           />
-          <div
-            sx={{
-              marginLeft: '10px'
-            }}
-          >{label}</div>
+          <div sx={{ ...wrappLabel }}>{label}</div>
         </label> :
         <Component
           {...rest}
