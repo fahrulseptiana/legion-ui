@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@legion-ui/theme-base": "link:../theme-base",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "legion-ui": "link:../legion-ui",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-feather": "^2.0.9",
     "react-scripts": "5.0.0",
-    "web-vitals": "^2.1.4",
-    "legion-ui": "file:../legion-ui",
-    "@legion-ui/theme-base": "file:../theme-base"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",

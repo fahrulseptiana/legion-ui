@@ -1,2 +1,6 @@
 export * from './components/Button'
-export {ThemeProvider} from '@theme-ui/core'
+export * from './components/Textfield'
+export * from './components/Checkbox'
+export * from './components/Anchor'
+export * from './components/LoginPage'
+export { ThemeProvider } from '@theme-ui/core'

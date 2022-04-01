@@ -3,4 +3,5 @@ import deepmerge from 'deepmerge'
 export * from './button'
 export * from './colors'
 export * from './theme'
-export {deepmerge as merge}
+export * from './spacers'
+export { deepmerge as merge }
